@@ -1,100 +1,144 @@
 # flow-chart-editor
 
-[![npm](https://img.shields.io/npm/v/flow-chart-editor.svg?maxAge=3600)](https://www.npmjs.com/package/flow-chart-editor)
-[![NPM downloads](http://img.shields.io/npm/dm/flow-chart-editor.svg)](https://npmjs.org/package/flow-chart-editor)
-![JS gzip size](http://img.badgesize.io/tlzzu/flow-chart-editor/master/lib/index.js.svg?compression=gzip&label=gzip%20size:%20JS)
-![CSS gzip size](http://img.badgesize.io/tlzzu/flow-chart-editor/master/lib/style.css.svg?compression=gzip&label=gzip%20size:%20CSS)
-[![Join the chat at https://gitter.im/tlzzu/flow-chart-editor](https://badges.gitter.im/tlzzu/flow-chart-editor.svg)](https://gitter.im/tlzzu/flow-chart-editor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-基于[cytoscape.js](https://github.com/cytoscape/cytoscape.js)的流程设计器，优点是可以在流程节点中嵌套子流程，支持实/虚线、连线弯曲、撤销重做、放大缩小，导出 json/png/jpg 文档等。[演示文档 Demo](https://tlzzu.github.io/flow-chart-editor/dist/index.html)
-
-> 在此，感谢 easyicon.net 提供的图标。
-
-[1. 预览-Preview](#1-预览-preview)
-
-[2. 安装使用-Install](#2-安装使用-install)
-
-[3. 二次开发-Build](#3-二次开发-build)
-
-[4. 文档-Document](#4-文档-document)
-
-[5. 依赖-Dependencies](#5-依赖-dependencies)
-
-[6. 捐赠-Donation](#6-捐赠-donation)
-
-[7. 许可证-LICENSE](#7-许可证-license)
-
-## 1. 预览-Preview
-
-## 2. 安装使用-Install
 
 ### npm 安装
 
 推荐使用 npm 安装
 
 ```
-npm i flow-chart-editor -S
-```
-
-可在页面中引用
-
-```
-import FCE from "flow-chart-ed";
-
-var fce=new FCE(options...);
+npm i 
+"flow-chart-editor": "git+https://github.com/qijizhihui/-flow-chart-editor-.git",
 ```
 
 ### 脚本引用
 
 ```
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>flow-chart-editor</title>
-    <script src="js/fce.1.0.0.min.js">
-  </head>
-  <body>
-    <div id="fce"></div>
-    <script>
-        var fce=new FCE(options...);
-        ...
-    </script>
-  </body>
-</html>
+require('flow-chart-editor');
 ```
 
-## 3. 二次开发-Build
+### 例子：
+[演示文档 Demo](flow-chart-editor/dist/index.html)
+```
+  // 画布
+  initEditor(editor) {
+    var that = this;
+    /* window.onload = function () { */
+    var fce = that.fce = new FCE({
+      el: editor,
+      rightMenus: [{
+        id: "id_alert",
+        content: "弹出窗",
+        tooltipText: "弹出窗",
+        selector: "node,edge", //当在node,edge元素上右键时才显示
+        onClickFunction: function (evt) { //点击后触发事件
+          var target = evt.target || evt.cyTarget;
+          alert('弹出信息！');
+        },
+        hasTrailingDivider: true
+      }],
+      toolbars: [{
+          name: 'rectangle',
+          icon: require('../../../contents/images/conf/rectangle.png'),
+          className: '',
+          title: '矩形',
+          exec: function (evt, clickType, obj) {
+            const label = prompt('请输入节点名称：'),
+              data = {
+                id: new Date().getTime(),
+                label: label
+              };
+            if (!label) return;
+            if (clickType === 'node') {
+              data.parent = obj.id;
+            }
+            this.addNode(data, 'rectangle');
+          },
+        },
+        {
+          name: 'rounded_rectangle',
+          icon: require('../../../contents/images/conf/rounded_rectangle.png'),
+          className: '',
+          title: '圆角矩形',
+          exec: function (evt, clickType, obj) {
+            const label = prompt('请输入节点名称：'),
+              data = {
+                id: new Date().getTime(),
+                label: label
+              };
+            if (!label) return;
+            if (clickType === 'node') {
+              data.parent = obj.id;
+            }
+            this.addNode(data, 'roundrectangle');
+          },
+        },
+        {
+          name: 'choice',
+          icon: require('../../../contents/images/conf/choice.png'),
+          className: '',
+          title: '菱形',
+          exec: function (evt, clickType, obj) {
+            const label = prompt('请输入节点名称：'),
+              data = {
+                id: new Date().getTime(),
+                label: label
+              };
+            if (!label) return;
+            if (clickType === 'node') {
+              data.parent = obj.id;
+            }
+            this.addNode(data, 'diamond');
+          },
+        },
+        {
+          name: 'round',
+          icon: require('../../../contents/images/conf/round.png'),
+          className: '',
+          title: '圆形',
+          exec: function (evt, clickType, obj) {
+            const label = prompt('请输入节点名称：'),
+              data = {
+                id: new Date().getTime(),
+                label: label
+              };
+            if (!label) return;
+            if (clickType === 'node') {
+              data.parent = obj.id;
+            }
+            this.addNode(data, 'ellipse');
+          },
+        },
+        {
+          name: 'download-json',
+          icon: require('../../../contents/images/conf/download.png'),
+          className: '',
+          title: '下载json文件',
+          click: function (bar) {
+            this.exportFile('json', '导出JSON文件');
+            bar.cancelActive(); //取消自身选中
+          },
+        },
+      ],
+    });
 
-二次开发前请确保已经安装`node`及`webpack`。在控制台中执行 `npm run <target>`，其中：
+    fce.addListener('add_click', function () {
+      console.log('编辑器被点击！');
+    });
 
-* `dev`：开发模式
-* `build`：执行打包
+    fce.addListener('context_menus_rename', function (evt, clickType, data) {
+      const label = prompt('请输入节点新名称：', data.label);
+      if (label) {
+        data.label = label;
+        this.rename(data);
+      }
+    });
 
-## 4. 文档-Document
+    fce.addListener('context_menus_remove', function (evt, clickType, data) {
+      if (confirm('您确定要删除该节点吗？')) {
+        this.remove(data.id);
+      }
+    });
+    /*    }; */
+  },
 
-## 5. 依赖-Dependencies
-
-[jquery ^3.2.1](https://github.com/jquery/jquery)
-
-[cytoscape ^3.2.0](https://github.com/cytoscape/cytoscape.js)
-
-[cytoscape-context-menus ^3.0.5](https://github.com/iVis-at-Bilkent/cytoscape.js-context-menus)
-
-[cytoscape-edge-bend-editing ^1.5.4](https://github.com/iVis-at-Bilkent/cytoscape.js-edge-bend-editing)
-
-[cytoscape-edgehandles ^3.0.2](https://github.com/cytoscape/cytoscape.js-edgehandles)
-
-[cytoscape-grid-guide ^2.0.5](https://github.com/iVis-at-Bilkent/cytoscape.js-grid-guide)
-
-[cytoscape-view-utilities ^2.0.7](https://github.com/iVis-at-Bilkent/cytoscape.js-view-utilities)
-
-[cytoscape.js-undo-redo ^1.0.1](https://github.com/iVis-at-Bilkent/cytoscape.js-undo-redo)
-
-## 6. 捐赠-Donation
-
-如果觉得有用可赏杯咖啡。
-![image](https://github.com/tlzzu/SoDiaoEditor.v2/raw/master/data/img/ds.png)
-
-## 7. 许可证-LICENSE
-
-MIT.
+```
