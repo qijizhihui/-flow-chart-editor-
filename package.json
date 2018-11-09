@@ -1,0 +1,168 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "flow-chart-editor",
+        "scope": null,
+        "escapedName": "flow-chart-editor",
+        "name": "flow-chart-editor",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "E:\\wifi\\dev\\qianhai\\html"
+    ]
+  ],
+  "_from": "flow-chart-editor@latest",
+  "_id": "flow-chart-editor@0.1.3",
+  "_inCache": true,
+  "_location": "/flow-chart-editor",
+  "_nodeVersion": "8.9.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/flow-chart-editor_0.1.3_1520518468471_0.6329332859913281"
+  },
+  "_npmUser": {
+    "name": "tlzzu",
+    "email": "tlzzu@outlook.com"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "flow-chart-editor",
+    "scope": null,
+    "escapedName": "flow-chart-editor",
+    "name": "flow-chart-editor",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/flow-chart-editor/-/flow-chart-editor-0.1.3.tgz",
+  "_shasum": "77f9cdfa8ac484a607de7ca3e0fc7a5d711349af",
+  "_shrinkwrap": null,
+  "_spec": "flow-chart-editor",
+  "_where": "E:\\wifi\\dev\\qianhai\\html",
+  "author": {
+    "name": "tlzzu"
+  },
+  "bugs": {
+    "url": "https://github.com/tlzzu/flow-chart-editor/issues"
+  },
+  "contributors": [
+    {
+      "name": "tlzzu",
+      "email": "tlzzu@outlook.com"
+    }
+  ],
+  "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "copy-webpack-plugin": "^4.2.3",
+    "cytoscape": "*",
+    "cytoscape-context-menus": "^3.0.5",
+    "cytoscape-edge-bend-editing": "^1.5.4",
+    "cytoscape-edgehandles": "^3.0.2",
+    "cytoscape-grid-guide": "^2.0.5",
+    "cytoscape-node-resize": "*",
+    "cytoscape-undo-redo": "^1.3.0",
+    "cytoscape-view-utilities": "^2.0.7",
+    "eslint-friendly-formatter": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jquery": "*",
+    "konva": "^1.7.6",
+    "url-loader": "^0.6.2"
+  },
+  "description": "流程设计器",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "compression-webpack-plugin": "^1.1.10",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^0.11.2",
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.5.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.7.2",
+    "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-OjTvFdhctBl0gk5NV1/WXf4inpYVPa3c4Kr5AGo6Vi4Z7rOt3PbN4n1M+1JHUTtEppaaiddQT6rGZTqcFDHm0g==",
+    "shasum": "77f9cdfa8ac484a607de7ca3e0fc7a5d711349af",
+    "tarball": "https://registry.npmjs.org/flow-chart-editor/-/flow-chart-editor-0.1.3.tgz",
+    "fileCount": 101,
+    "unpackedSize": 5396500
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "gitHead": "b50b3b611c8105177719a3811978ec586ed9b536",
+  "homepage": "https://tlzzu.github.io/flow-chart-editor/dist/index.html",
+  "keywords": [
+    "graph",
+    "graph-theory",
+    "network",
+    "node",
+    "edge",
+    "vertex",
+    "link",
+    "analysis",
+    "visualisation",
+    "visualization",
+    "draw",
+    "render",
+    "biojs",
+    "cytoscape",
+    "flow-chart-editor"
+  ],
+  "license": "MIT",
+  "main": "src/js/index.js",
+  "maintainers": [
+    {
+      "name": "tlzzu",
+      "email": "tlzzu@outlook.com"
+    }
+  ],
+  "name": "flow-chart-editor",
+  "optionalDependencies": {},
+  "readme": "# flow-chart-editor\r\n\r\n[![npm](https://img.shields.io/npm/v/flow-chart-editor.svg?maxAge=3600)](https://www.npmjs.com/package/flow-chart-editor)\r\n[![NPM downloads](http://img.shields.io/npm/dm/flow-chart-editor.svg)](https://npmjs.org/package/flow-chart-editor)\r\n![JS gzip size](http://img.badgesize.io/tlzzu/flow-chart-editor/master/lib/index.js.svg?compression=gzip&label=gzip%20size:%20JS)\r\n![CSS gzip size](http://img.badgesize.io/tlzzu/flow-chart-editor/master/lib/style.css.svg?compression=gzip&label=gzip%20size:%20CSS)\r\n[![Join the chat at https://gitter.im/tlzzu/flow-chart-editor](https://badges.gitter.im/tlzzu/flow-chart-editor.svg)](https://gitter.im/tlzzu/flow-chart-editor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\r\n\r\n基于[cytoscape.js](https://github.com/cytoscape/cytoscape.js)的流程设计器，优点是可以在流程节点中嵌套子流程，支持实/虚线、连线弯曲、撤销重做、放大缩小，导出 json/png/jpg 文档等。[演示文档 Demo](https://tlzzu.github.io/flow-chart-editor/dist/index.html)\r\n\r\n> 在此，感谢 easyicon.net 提供的图标。\r\n\r\n[1. 预览-Preview](#1-预览-preview)\r\n\r\n[2. 安装使用-Install](#2-安装使用-install)\r\n\r\n[3. 二次开发-Build](#3-二次开发-build)\r\n\r\n[4. 文档-Document](#4-文档-document)\r\n\r\n[5. 依赖-Dependencies](#5-依赖-dependencies)\r\n\r\n[6. 捐赠-Donation](#6-捐赠-donation)\r\n\r\n[7. 许可证-LICENSE](#7-许可证-license)\r\n\r\n## 1. 预览-Preview\r\n\r\n## 2. 安装使用-Install\r\n\r\n### npm 安装\r\n\r\n推荐使用 npm 安装\r\n\r\n```\r\nnpm i flow-chart-editor -S\r\n```\r\n\r\n可在页面中引用\r\n\r\n```\r\nimport FCE from \"flow-chart-ed\";\r\n\r\nvar fce=new FCE(options...);\r\n```\r\n\r\n### 脚本引用\r\n\r\n```\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>flow-chart-editor</title>\r\n    <script src=\"js/fce.1.0.0.min.js\">\r\n  </head>\r\n  <body>\r\n    <div id=\"fce\"></div>\r\n    <script>\r\n        var fce=new FCE(options...);\r\n        ...\r\n    </script>\r\n  </body>\r\n</html>\r\n```\r\n\r\n## 3. 二次开发-Build\r\n\r\n二次开发前请确保已经安装`node`及`webpack`。在控制台中执行 `npm run <target>`，其中：\r\n\r\n* `dev`：开发模式\r\n* `build`：执行打包\r\n\r\n## 4. 文档-Document\r\n\r\n## 5. 依赖-Dependencies\r\n\r\n[jquery ^3.2.1](https://github.com/jquery/jquery)\r\n\r\n[cytoscape ^3.2.0](https://github.com/cytoscape/cytoscape.js)\r\n\r\n[cytoscape-context-menus ^3.0.5](https://github.com/iVis-at-Bilkent/cytoscape.js-context-menus)\r\n\r\n[cytoscape-edge-bend-editing ^1.5.4](https://github.com/iVis-at-Bilkent/cytoscape.js-edge-bend-editing)\r\n\r\n[cytoscape-edgehandles ^3.0.2](https://github.com/cytoscape/cytoscape.js-edgehandles)\r\n\r\n[cytoscape-grid-guide ^2.0.5](https://github.com/iVis-at-Bilkent/cytoscape.js-grid-guide)\r\n\r\n[cytoscape-view-utilities ^2.0.7](https://github.com/iVis-at-Bilkent/cytoscape.js-view-utilities)\r\n\r\n[cytoscape.js-undo-redo ^1.0.1](https://github.com/iVis-at-Bilkent/cytoscape.js-undo-redo)\r\n\r\n## 6. 捐赠-Donation\r\n\r\n如果觉得有用可赏杯咖啡。\r\n![image](https://github.com/tlzzu/SoDiaoEditor.v2/raw/master/data/img/ds.png)\r\n\r\n## 7. 许可证-LICENSE\r\n\r\nMIT.\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlzzu/flow-chart-editor.git"
+  },
+  "scripts": {
+    "build": "webpack --config ./build/webpack.config.prod.js",
+    "dev": "webpack-dev-server --config ./build/webpack.config.dev.js"
+  },
+  "version": "0.1.3"
+}
